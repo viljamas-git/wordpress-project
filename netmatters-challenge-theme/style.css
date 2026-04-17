@@ -1,0 +1,477 @@
+
+
+:root {
+  --nm-color-primary: #0f2747;
+  --nm-color-secondary: #2e4f73;
+  --nm-color-accent: #00b7ff;
+  --nm-color-bg: #f4f7fb;
+  --nm-color-text: #1f2933;
+  --nm-color-white: #ffffff;
+  --nm-space: clamp(1rem, 2vw, 1.5rem);
+  --nm-radius: 0.5rem;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--nm-color-text);
+  background: var(--nm-color-bg);
+  line-height: 1.6;
+}
+
+.site-main {
+  flex: 1 0 auto;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+}
+
+.site-main > .container {
+  padding: 2rem 0;
+}
+
+.site-header,
+.site-footer {
+  background: var(--nm-color-primary);
+  color: var(--nm-color-white);
+}
+
+.site-header__inner,
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.custom-logo-link {
+  display: block;
+  line-height: 0;
+}
+
+.custom-logo {
+  width: clamp(52px, 7vw, 70px);
+  height: auto;
+}
+
+.site-branding__name {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.primary-menu,
+.footer-menu {
+  list-style: none;
+  display: flex;
+  gap: 0.85rem;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-menu a,
+.footer-menu a,
+.site-footer a,
+.site-header a {
+  color: var(--nm-color-white);
+  text-decoration: none;
+}
+
+.card-grid {
+  display: grid;
+  gap: var(--nm-space);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.nm-card {
+  background: var(--nm-color-white);
+  border-radius: var(--nm-radius);
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.nm-home-hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.nm-home-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.nm-button {
+  display: inline-block;
+  background: var(--nm-color-primary);
+  color: var(--nm-color-white);
+  padding: 0.65rem 1rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nm-button--secondary {
+  background: var(--nm-color-secondary);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 999;
+  background: #fff;
+  color: #000;
+  padding: 0.5rem;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--nm-color-accent);
+  outline-offset: 2px;
+}
+
+.primary-menu a:hover,
+.footer-menu a:hover {
+  text-decoration: none;
+}
+
+.primary-menu a {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  font-weight: 500;
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.primary-menu a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.primary-menu a[aria-current="page"] {
+  background: #ffffff;
+  color: #0f2747;
+  border-color: #ffffff;
+}
+
+.primary-menu a:focus-visible,
+.footer-menu a:focus-visible,
+.nm-project-filters a:focus-visible,
+.nm-breadcrumbs a:focus-visible {
+  background: #ffffff;
+  color: #0f2747;
+  text-decoration: none;
+}
+
+.nm-contact-form {
+  max-width: 42rem;
+  background: var(--nm-color-white);
+  padding: 1rem;
+  border-radius: var(--nm-radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.nm-contact-form label {
+  display: block;
+  font-weight: 600;
+}
+
+.nm-contact-form input:not([type="checkbox"]),
+.nm-contact-form textarea {
+  width: 100%;
+  margin-top: 0.35rem;
+  border: 1px solid #bcccdc;
+  border-radius: 0.375rem;
+  padding: 0.65rem;
+  font: inherit;
+}
+
+.nm-contact-form button {
+  background: var(--nm-color-primary);
+  color: var(--nm-color-white);
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+}
+
+.nm-form-message {
+  background: #e6fffa;
+  border: 1px solid #81e6d9;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.nm-contact-form .wpcf7-not-valid-tip,
+.nm-contact-form .wpcf7 form .wpcf7-response-output,
+.nm-form-error-help {
+  color: #8a1a1a;
+  font-weight: 600;
+}
+
+.nm-contact-form .wpcf7-not-valid {
+  border-color: #8a1a1a;
+}
+
+.nm-contact-form .wpcf7 form.invalid .wpcf7-response-output,
+.nm-contact-form .wpcf7 form.unaccepted .wpcf7-response-output {
+  background: #fff1f1;
+  border: 1px solid #8a1a1a;
+}
+
+.nm-breadcrumbs {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 1rem auto 0;
+  font-size: 0.95rem;
+}
+
+.nm-project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.nm-project-filters a {
+  border: 1px solid #2e4f73;
+  border-radius: 999px;
+  color: #1f2933;
+  padding: 0.3rem 0.7rem;
+  text-decoration: none;
+}
+
+.nm-project-filters a.is-active {
+  background: #0f2747;
+  color: #ffffff;
+}
+
+.nm-card img,
+.wp-post-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.nm-card > a:first-child {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  aspect-ratio: 16 / 9;
+  background: #d9e2ec;
+}
+
+.nm-honeypot-field {
+  position: absolute;
+  left: -100vw;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+body.home .site-main {
+  padding: clamp(1.25rem, 2vw, 2rem) 0 clamp(2.5rem, 5vw, 4rem);
+}
+
+body.home .site-main .full-width-page {
+  width: min(1128px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+body.home .site-main .elementor-widget-container > h1,
+body.home .site-main .elementor-widget-container > h2,
+body.home .site-main .elementor-widget-container > h3,
+body.home .site-main .elementor-heading-title {
+  color: #0f2747;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+body.home .site-main h1.elementor-heading-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+body.home .site-main h2.elementor-heading-title {
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+}
+
+body.home .site-main p,
+body.home .site-main .elementor-text-editor {
+  color: #1f2933;
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+body.home .site-main .elementor-section,
+body.home .site-main .elementor-container,
+body.home .site-main .elementor-column,
+body.home .site-main .elementor-widget-wrap {
+  gap: 1.2rem;
+}
+
+body.home .site-main .elementor-widget-button .elementor-button {
+  background: #0f2747;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #0f2747;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.95rem 1.45rem;
+}
+
+body.home .site-main .elementor-widget-button .elementor-button:hover,
+body.home .site-main .elementor-widget-button .elementor-button:focus-visible {
+  background: #2e4f73;
+  border-color: #2e4f73;
+}
+
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="discover"],
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="contact"],
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="book"] {
+  background: #4a709c;
+  border-color: #4a709c;
+}
+
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="discover"]:hover,
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="contact"]:hover,
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="book"]:hover,
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="discover"]:focus-visible,
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="contact"]:focus-visible,
+body.home .site-main .elementor-widget-container > .elementor-button-wrapper .elementor-button-link[href*="book"]:focus-visible {
+  background: #2e4f73;
+  border-color: #2e4f73;
+}
+
+body.home .site-main .elementor-widget-text-editor,
+body.home .site-main .elementor-widget-heading,
+body.home .site-main .elementor-widget-button {
+  margin-bottom: 0.85rem;
+}
+
+body.home .site-main .elementor-widget-container:has(> .elementor-heading-title + p),
+body.home .site-main .elementor-widget-container:has(> a + p),
+body.home .site-main .elementor-widget-container:has(> p + a),
+body.home .site-main .elementor-widget-container:has(> .elementor-button-wrapper + p),
+body.home .site-main .elementor-widget-container:has(> p + .elementor-button-wrapper),
+body.home .site-main .elementor-widget-container:has(> .elementor-heading-title + .elementor-button-wrapper) {
+  background: #ffffff;
+  border: 1px solid #cbd2d9;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 14px rgba(15, 39, 71, 0.06);
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+body.home .site-main .elementor-widget-container a:not(.elementor-button),
+body.home .site-main .elementor-widget-container .elementor-heading-title > a {
+  color: #3f1b98;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+body.home .site-main .elementor-widget-container strong {
+  color: #0f2747;
+  font-weight: 700;
+}
+
+
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/about/"]) > .elementor-widget-wrap,
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/services/"]) > .elementor-widget-wrap,
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/projects/"]) > .elementor-widget-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #cbd2d9;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 14px rgba(15, 39, 71, 0.06);
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/about/"]) .elementor-widget-button,
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/services/"]) .elementor-widget-button,
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/projects/"]) .elementor-widget-button {
+  margin-top: auto;
+}
+
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/about/"]) .elementor-heading-title,
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/services/"]) .elementor-heading-title,
+body.home .site-main .elementor-column:has(.elementor-widget-heading):has(.elementor-widget-text-editor):has(.elementor-widget-button .elementor-button-link[href*="/projects/"]) .elementor-heading-title,
+body.home .site-main .wp-block-columns .wp-block-column h4 {
+  min-height: 2.4em;
+}
+
+
+body.home .site-main .elementor-element-nm-featured-project-cards .elementor-column > .elementor-widget-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+body.home .site-main .elementor-element-nm-featured-project-cards .elementor-heading-title {
+  min-height: 3.6em;
+}
+
+body.home .site-main .elementor-top-section {
+  margin-bottom: clamp(2.5rem, 5vw, 4.25rem);
+}
+
+@media (max-width: 782px) {
+  body.home .site-main .full-width-page {
+    width: calc(100% - 1.25rem);
+  }
+
+  body.home .site-main .elementor-widget-button .elementor-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+body.home .site-main .wp-block-columns {
+  align-items: stretch;
+}
+
+body.home .site-main .wp-block-columns .wp-block-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #cbd2d9;
+  border-radius: 0.6rem;
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+body.home .site-main .wp-block-columns .wp-block-buttons,
+body.home .site-main .wp-block-columns .wp-block-button,
+body.home .site-main .wp-block-columns p:has(> a.wp-block-button__link) {
+  margin-top: auto;
+}
